@@ -2,7 +2,7 @@ const { admin, db } = require('./admin');
 
 //Auth Middleware
 //Allows requests only sent by token users
-exports.FBAuth = (req, res, next) => {
+module.exports = (req, res, next) => {
     let idToken;
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
         idToken = req.headers.authorization.split('Bearer ')[1];
